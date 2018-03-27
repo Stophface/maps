@@ -4243,7 +4243,7 @@ react-is@^16.3.0-alpha.3:
 
 "react-native-maps@https://github.com/Stophface/react-native-maps-0.20.1.git":
   version "0.20.1"
-  resolved "https://github.com/Stophface/react-native-maps-0.20.1.git#83cda291de56c4b7047b4b43db221df4e2feb4d6"
+  resolved "https://github.com/Stophface/react-native-maps-0.20.1.git#bcb4dd4257b795e3285a39e59504b3f7e34892af"
   dependencies:
     babel-plugin-module-resolver "^2.3.0"
     babel-preset-react-native "1.9.0"

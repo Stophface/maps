@@ -47,7 +47,6 @@ export default class App extends Component<Props> {
           loadingEnabled
           loadingIndicatorColor="#666666"
           loadingBackgroundColor="#eeeeee">
-          <MbTile />
         </MapView>
       </View>
     )

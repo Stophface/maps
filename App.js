@@ -15,7 +15,8 @@ const LATITUDE_DELTA = 0.0922;
 const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO;
 const SPACE = 0.01;
 
-export default class App extends Component {
+type Props = {};
+export default class App extends Component<Props> {
   render() {
     return (
       <View

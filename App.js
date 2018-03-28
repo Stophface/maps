@@ -4,14 +4,14 @@ import {
   View,
   Dimensions
 } from 'react-native';
-import MapView, { MbTile } from 'react-native-maps';
+import MapView from 'react-native-maps';
 
 const { width, height } = Dimensions.get('window');
 
 const ASPECT_RATIO = width / height;
-const LATITUDE = 37.78825;
-const LONGITUDE = -122.4324;
-const LATITUDE_DELTA = 0.0922;
+const LATITUDE = 48.67483002913051;
+const LONGITUDE = -113.76805078249163
+const LATITUDE_DELTA = 0.922;
 const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO;
 const SPACE = 0.01;
 
@@ -32,10 +32,12 @@ export default class App extends Component<Props> {
           loadingEnabled
           loadingIndicatorColor="#666666"
           loadingBackgroundColor="#eeeeee">
-          <MapView.MbTile 
-          pathTemplate={"MbTilePath"}/>
+          <MapView.MbTile
+            pathTemplate={"MbTilePath"}
+            tileSize={256} />
           <MapView.LocalTile
-          pathTemplate={"LocalTilePath"} />
+            pathTemplate={"LocalTilePath"}
+            tileSize={256} />
         </MapView>
       </View>
     )

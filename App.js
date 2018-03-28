@@ -32,7 +32,10 @@ export default class App extends Component<Props> {
           loadingEnabled
           loadingIndicatorColor="#666666"
           loadingBackgroundColor="#eeeeee">
-          <MbTile />
+          <MapView.MbTile 
+          pathTemplate={"MbTilePath"}/>
+          <MapView.LocalTile
+          pathTemplate={"LocalTilePath"} />
         </MapView>
       </View>
     )

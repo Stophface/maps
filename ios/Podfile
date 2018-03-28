@@ -21,11 +21,13 @@ def pods
     ]
 
     pod 'react-native-maps', path: rn_maps_path
+    pod 'FMDB'
 
 end
 
+
 target 'maps' do
-	pods
+  pods
 end
 
 post_install do |installer|

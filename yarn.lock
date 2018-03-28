@@ -4241,9 +4241,9 @@ react-is@^16.3.0-alpha.3:
   version "16.3.0-alpha.3"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.3.0-alpha.3.tgz#0960d927b2b17154897139c6329aa958e29a86c2"
 
-"react-native-maps@https://github.com/Stophface/react-native-maps-0.20.1.git#refactor-1":
+"react-native-maps@https://github.com/Stophface/react-native-maps-0.20.1.git":
   version "0.20.1"
-  resolved "https://github.com/Stophface/react-native-maps-0.20.1.git#8cf75e74933229582300496fd5fc2ede3252b073"
+  resolved "https://github.com/Stophface/react-native-maps-0.20.1.git#5218625091f818b0787d299af63ae9107ebcf4ef"
   dependencies:
     babel-plugin-module-resolver "^2.3.0"
     babel-preset-react-native "1.9.0"

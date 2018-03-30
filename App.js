@@ -39,9 +39,9 @@ export default class App extends Component<Props> {
       <View
         style={styles.container}>
         <TouchableOpacity
-          style={{ position: "absolute", bottom: 0, backgroundColor: this.state.offlineMap ? "lightblue" : "white", zIndex: 100, height: 50, width: width, justifyContent: "center", alignItems: "center" }}
+          style={styles.button}
           onPress={() => this._toggleOfflineMap()}>
-          <Text> {this.state.offlineMap ? "Online Map" : "Offline Map"} </Text>
+          <Text> {this.state.offlineMap ? "Switch to Online Map" : "Switch to Offline Map"} </Text>
         </TouchableOpacity>
         <MapView
           style={styles.map}
@@ -54,9 +54,9 @@ export default class App extends Component<Props> {
           loadingEnabled
           loadingIndicatorColor="#666666"
           loadingBackgroundColor="#eeeeee">
-          {this.state.offlineMap ? <MapView.LocalTile
+          {this.state.offlineMap ? <MapView.MbTile
             pathTemplate={"{z}/{x}/{y}"}
-            tileSize={256} /> : null}
+            tileSize={256}/> : null}
 
         </MapView>
       </View >
@@ -67,6 +67,18 @@ export default class App extends Component<Props> {
 const styles = StyleSheet.create({
   container: {
     ...StyleSheet.absoluteFillObject,
+    alignItems: "center",
+  },
+  button: {
+    position: "absolute",
+    bottom: 20,
+    backgroundColor: "lightblue",
+    zIndex: 100,
+    height: 50,
+    width: width / 2,
+    borderRadius: width / 2,
+    justifyContent: "center",
+    alignItems: "center",
   },
   map: {
     ...StyleSheet.absoluteFillObject,

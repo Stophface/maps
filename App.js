@@ -4,8 +4,8 @@ import {
   View,
   Dimensions,
   TouchableOpacity,
-  Button,
   Text,
+  Platform,
 } from 'react-native';
 import MapView from 'react-native-maps';
 
@@ -38,11 +38,6 @@ export default class App extends Component<Props> {
     return (
       <View
         style={styles.container}>
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => this._toggleOfflineMap()}>
-          <Text> {this.state.offlineMap ? "Switch to Online Map" : "Switch to Offline Map"} </Text>
-        </TouchableOpacity>
         <MapView
           style={styles.map}
           initialRegion={{
@@ -53,12 +48,17 @@ export default class App extends Component<Props> {
           }}
           loadingEnabled
           loadingIndicatorColor="#666666"
-          loadingBackgroundColor="#eeeeee">
+          loadingBackgroundColor="#eeeeee"
+          mapType={Platform.OS == "android" && this.state.offlineMap ? "none" : "standard"}>
           {this.state.offlineMap ? <MapView.MbTile
             pathTemplate={"{z}/{x}/{y}"}
-            tileSize={256}/> : null}
-
+            tileSize={256} /> : null}
         </MapView>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => this._toggleOfflineMap()}>
+          <Text> {this.state.offlineMap ? "Switch to Online Map" : "Switch to Offline Map"} </Text>
+        </TouchableOpacity>
       </View >
     )
   }
@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     bottom: 20,
     backgroundColor: "lightblue",
-    zIndex: 100,
+    zIndex: 999999,
     height: 50,
     width: width / 2,
     borderRadius: width / 2,

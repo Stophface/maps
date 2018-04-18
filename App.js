@@ -51,7 +51,7 @@ export default class App extends Component<Props> {
           loadingBackgroundColor="#eeeeee"
           mapType={Platform.OS == "android" && this.state.offlineMap ? "none" : "standard"}>
           {this.state.offlineMap ? <MapView.MbTile
-            pathTemplate={"{z}/{x}/{y}"}
+            pathTemplate={"Path/to/mBTilesDatabase.mbtiles"}
             tileSize={256} /> : null}
         </MapView>
         <TouchableOpacity
